@@ -11,8 +11,10 @@
         android:label="fragment_final_destination"
         tools:layout="@layout/fragment_final_destination">
         <action
-            android:id="@+id/action_finalDestination_to_mainDestination2"
-            app:destination="@id/mainDestination" />
+            android:id="@+id/navigateToMain"
+            app:destination="@id/mainDestination"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"/>
     </fragment>
     <fragment
         android:id="@+id/mainDestination"
@@ -20,7 +22,9 @@
         android:label="fragment_main_destination"
         tools:layout="@layout/fragment_main_destination">
         <action
-            android:id="@+id/action_mainDestination2_to_finalDestination"
-            app:destination="@id/finalDestination" />
+            android:id="@+id/navigateToFinal"
+            app:destination="@id/finalDestination"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"/>
     </fragment>
 </navigation>

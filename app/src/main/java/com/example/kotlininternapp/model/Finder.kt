@@ -3,16 +3,24 @@ package com.example.kotlininternapp.model
 class Finder {
 
     var array: Array<Int> = emptyArray();
+    var flag = false;
 
     constructor(string: String){
         val converter = Converter()
         converter.setInput(string)
         this.array = converter.toArray()
+        if(array.size >= 3){
+            this.flag = true
+        }
 
     }
 
 
-    public fun find(): Int {
+    public fun find(): String {
+
+        if (!flag){
+            return "Not enough arguments"
+        }
 
         var ifEven = false
         var calcEven: Int = 0
@@ -42,7 +50,7 @@ class Finder {
 
 
         }
-        return misfit
+        return misfit.toString()
     }
 
 

@@ -5,11 +5,16 @@ class Converter() {
     private var input:String = "";
 
     public fun toArray (): Array<Int> {
+        val regex = Regex(pattern ="^[-,0-9]+/[,\\s]+|[,\\s]+/g\$" )
+        if (regex.matches(input)) {
+            val array = input.split(',').toTypedArray()
+            val list: MutableList<Int> = ArrayList()
+            array.forEach { list.add(it.toInt()) }
+            return list.toTypedArray()
 
-        val array = input.split(',').toTypedArray()
-        val list: MutableList<Int> = ArrayList()
-        array.forEach { list.add(it.toInt()) }
-        return list.toTypedArray()
+        }else{
+            return emptyArray()
+        }
 
     }
 

@@ -5,7 +5,7 @@ class Converter() {
     private var input:String = "";
 
     public fun toArray (): Array<Int> {
-        val regex = Regex(pattern ="[0-9]+(,[0-9]+)+" )
+        val regex = Regex(pattern ="^([-+]?[0-9]+[-,])*[+-]?[0-9]+\$" )
         if (regex.matches(input)) {
             val array = input.split(',').toTypedArray()
             val list: MutableList<Int> = ArrayList()
